@@ -96,6 +96,13 @@ public class HelloWorldService {
 ```
 　　IoC容器中，其作用是作为第三种角色，它的任务是创建 beans.xml 文件中声明的 Java Bean 对象。并通过setter方法注入依赖。</br>
 　　在这个例子中，HelloWorldService 是一个java bean注入依赖。
+    依赖注入的过程具体如下：</br>
+&emsp;&emsp;Dependency Resolution Process</br>
+&emsp;&emsp;The container performs bean dependency resolution as follows:</br>
+&emsp;&emsp;The ApplicationContext is created and initialized with configuration metadata that describes all the beans. Configuration metadata can be specified by XML, Java code, or annotations.</br>
+&emsp;&emsp;For each bean, its dependencies are expressed in the form of properties, constructor arguments, or arguments to the static-factory method (if you use that instead of a normal constructor). These dependencies are provided to the bean, when the bean is actually created.</br>
+&emsp;&emsp;Each property or constructor argument is an actual definition of the value to set, or a reference to another bean in the container.</br>
+&emsp;&emsp;Each property or constructor argument that is a value is converted from its specified format to the actual type of that property or constructor argument. By default, Spring can convert a value supplied in string format to all built-in types, such as int, long, String, boolean, and so forth.
 
 
 
