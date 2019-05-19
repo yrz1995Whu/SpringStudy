@@ -103,6 +103,7 @@ public class HelloWorldService {
 &emsp;&emsp;For each bean, its dependencies are expressed in the form of properties, constructor arguments, or arguments to the static-factory method (if you use that instead of a normal constructor). These dependencies are provided to the bean, when the bean is actually created.</br>
 &emsp;&emsp;Each property or constructor argument is an actual definition of the value to set, or a reference to another bean in the container.</br>
 &emsp;&emsp;Each property or constructor argument that is a value is converted from its specified format to the actual type of that property or constructor argument. By default, Spring can convert a value supplied in string format to all built-in types, such as int, long, String, boolean, and so forth.
+&emsp;&emsp阅读源码可知，Spring依赖注入具体的源码实现由BeanWrapper与BeanWrapperImpl来完成。
 
 
 
