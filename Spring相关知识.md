@@ -11,3 +11,4 @@
 &emsp;&emsp;9、当Bean不再需要时，会经过清理阶段，如果Bean实现了DisposableBean这个接口，会调用那个其实现的destroy()方法；<br/>
 &emsp;&emsp;10、最后，如果这个Bean的Spring配置中配置了destroy-method属性，会自动调用其配置的销毁方法。<br/>
 &emsp;&emsp;以上10步骤可以作为面试或者笔试的模板，另外我们这里描述的是应用Spring上下文Bean的生命周期，如果应用Spring的工厂也就是BeanFactory的话去掉第5步就Ok了。
+&emsp;&emsp;[Spring Boot自动配置原理](https://www.jianshu.com/p/f14aea146aad)
