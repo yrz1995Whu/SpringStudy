@@ -321,9 +321,6 @@ protected void doRegisterBeanDefinitions(Element root) {
 ```
 进入parseBeanDefinitions()方法中：
 ```
-
-// default namespace 涉及到的就四个标签 <import />、<alias />、<bean /> 和 <beans />，
-// 其他的属于 custom 的
 protected void parseBeanDefinitions(Element root, BeanDefinitionParserDelegate delegate) {
    if (delegate.isDefaultNamespace(root)) {
       NodeList nl = root.getChildNodes();
@@ -345,10 +342,9 @@ protected void parseBeanDefinitions(Element root, BeanDefinitionParserDelegate d
    }
 }
 ```
-默认的标签有四种，<import />、<alias />、<bean />、<beans />，CustomElement有<mvc />、<task />、<context />、<aop />等，进入processBeanDefinition
-方法。
+默认的标签有四种，<import />、<alias />、<bean />、<beans />，
+CustomElement有<mvc />、<task />、<context />、<aop />等，进入processBeanDefinition方法。
 ```
-
 protected void processBeanDefinition(Element ele, BeanDefinitionParserDelegate delegate) {
    // 将 <bean /> 节点中的信息提取出来，然后封装到一个 BeanDefinitionHolder 中，细节往下看
    BeanDefinitionHolder bdHolder = delegate.parseBeanDefinitionElement(ele);
@@ -369,6 +365,8 @@ protected void processBeanDefinition(Element ele, BeanDefinitionParserDelegate d
       getReaderContext().fireComponentRegistered(new BeanComponentDefinition(bdHolder));
    }
 }
+```
+进入下一层方法：
 ```
 public BeanDefinitionHolder parseBeanDefinitionElement(Element ele) {
     return parseBeanDefinitionElement(ele, null);
